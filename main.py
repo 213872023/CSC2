@@ -48,6 +48,14 @@ def delete_row ():
     Label(main_window, text="                                 ").grid(column=4,row=name_count+7)
     print_customer_details()
 
+def check():
+    #variables used
+    global details, entry_Customer_Name,entry_Receipt_Number,entry_Item_Hired,entry_Quantity_Hired,total_entries
+    entry_check=1
+    Label(main_window, text="                                                           ") .grid(column=2, row=2)
+    Label(main_window, text="                                                           ") .grid(column=2, row=3)
+    Label(main_window, text="                                                           ") .grid(column=2, row=4)
+    Label(main_window, text="                                                           ") .grid(column=2, row=5)
 
 
 
