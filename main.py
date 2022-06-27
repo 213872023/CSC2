@@ -57,31 +57,7 @@ def check():
     Label(main_window, text="                                                           ") .grid(column=2, row=4)
     Label(main_window, text="                                                           ") .grid(column=2, row=5)
 
-#checking that costumer name is not blank, set error text if blank
-    if len(entry_Customer_Name.get())==0:
-        Label(main_window,fg='red',text='Please enter your name').grid(column=2,row=2,sticky=W)
-        entry_check=1
 
-    #checking that receipt is not blank and sending error if its blank
-    if len(entry_Receipt_Number.get())==0:
-        Label(main_window,fg='red',text='Please enter your receipt number').grid(column=2,row=3,sticky=W)
-        entry_check=1
-
-    #checking that item held is not blank and sending error if its blank
-    if len(entry_Item_Hired.get()) == 0:
-        Label(main_window,fg='red',text='Please choose your item').grid(column=2,row=5,sticky=W)
-        entry_check=1
-
-    #checking that number hired is not blank and sending error if its blank
-    if (entry_Quantity_Hired.get().isdigit()):
-        if int(entry_Quantity_Hired.get()) < 1 or int(entry_Quantity_Hired.get()) > 500:
-            Label(main_window,fg='red',text='1 to 500 only').grid(column=2,row=6,sticky=W)
-            entry_check=1
-    else:
-        Label(main_window,fg='red',text='1 to 500 only').grid(column=2,row=6,sticky=W)
-        entry_check=1
-    if entry_check ==1:
-        append_details()
 
 #create the buttons and labels
 def setup_buttons():
