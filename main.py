@@ -90,7 +90,28 @@ def setup_buttons():
     Button(main_window, text="Append Details",command=append_name) .grid(column=3,row=2)
     Button(main_window, text="Print Details",command=print_customer_details) .grid(column=3,row=3)
 
+    # UI/Label
+    Label(main_window, text='Julie''s Party Hire Store', font=('bold', 15)).grid(column=1, row=0, sticky=W + E)
+    Label(main_window, text="Customer Name").grid(column=0, row=2)
+    entry_Customer_Name = Entry(main_window)
+    entry_Customer_Name.grid(column=1, row=2)
+    Label(main_window, text="Receipt Number").grid(column=0, row=3)
+    entry_Receipt_Number = Entry(main_window)
+    entry_Receipt_Number.grid(column=1, row=3)
+    Label(main_window, text="Item Hired").grid(column=0, row=4)
 
+    item = StringVar()
+    entry_Item_Hired = ttk.Combobox(main_window, state='readonly', textvariable=item, values=(
+        "Chairs Tables Tableware Drapes Backdrops Props Balloons Partyhats Catering Lights Bouncyhouse"), width=17)
+    entry_Item_Hired.grid(column=0, row=5)
+
+    Label(main_window, text="Quantity Hired").grid(column=1, row=4)
+    entry_Quantity_Hired = Entry(main_window)
+    entry_Quantity_Hired.grid(column=1, row=5)
+    Label(main_window, text="Row #").grid(column=0, row=6)
+    delete_item = Entry(main_window)
+    delete_item.grid(column=1, row=6)
+    Button(main_window, text="Delete", command=delete_row).grid(column=2, row=6)
 
 
 
