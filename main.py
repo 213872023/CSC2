@@ -113,11 +113,37 @@ def setup_buttons():
     delete_item.grid(column=1, row=6)
     Button(main_window, text="Delete", command=delete_row).grid(column=2, row=6)
 
+#Message to user to fill out Customer Name
+    if len(entry_Customer_Name.get())==0:
+        Label(main_window,fg='green',text='Please enter your name').grid(column=2,row=2,sticky=W)
+        entry_check=1
+
+    #Message to user to fill out a Custom Receipt number
+    if len(entry_Receipt_Number.get())==0:
+        Label(main_window,fg='green',text='Please enter your receipt number').grid(column=2,row=3,sticky=W)
+        entry_check=1
+
+    #Message to user to fill out wanted Hired Item
+    if len(entry_Item_Hired.get())==0:
+        Label(main_window,fg='green',text='Please choose your item').grid(column=2,row=5,sticky=W)
+        entry_check=1
+
+    #Message to user to fill out Quantity of hired Item
+    if (entry_Quantity_Hired.get().isdigit()):
+        if int(entry_Quantity_Hired.get()) < 1 or int(entry_Quantity_Hired.get()) > 500:
+            Label(main_window,fg='green',text='1 to 500 only').grid(column=3,row=5,sticky=W)
+            entry_check=1
+    else:
+        Label(main_window,fg='green',text='1 to 500 only').grid(column=3,row=5,sticky=W)
+        entry_check=1
+    if entry_check ==1:
+        append_details()
+
 #starting the program
 def main():
     global main_window
     global customer_details, entry_name,entry_age,entry_gender, total_entries
-    customer_details = []
+    customer_details = ()
     total_entries = 0
     main_window = Tk()
     setup_buttons()
