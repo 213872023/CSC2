@@ -60,6 +60,10 @@ def check():
 
 
 #create the buttons and labels
+def append_details():
+    pass
+
+
 def setup_buttons():
     global customer_details, entry_Customer_Name,entry_Receipt_Number,entry_Item_Hired,entry_Quantity_Hired, total_entries, delete_item
     Button(main_window, text="Quit",command=quit) .grid(column=3, row=4)
