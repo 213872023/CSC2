@@ -83,6 +83,13 @@ def check():
     if entry_check ==1:
         append_details()
 
+#create the buttons and labels
+def setup_buttons():
+    global customer_details, entry_Customer_Name,entry_Receipt_Number,entry_Item_Hired,entry_Quantity_Hired, total_entries, delete_item
+    Button(main_window, text="Quit",command=quit) .grid(column=3, row=4)
+    Button(main_window, text="Append Details",command=append_name) .grid(column=3,row=2)
+    Button(main_window, text="Print Details",command=print_customer_details) .grid(column=3,row=3)
+
 
 
 
