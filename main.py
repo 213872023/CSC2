@@ -35,6 +35,19 @@ def append_name ():
         entry_Quantity_Hired.delete(0,'end')
         total_entries +=  1
 
+#delete a row from the list
+def delete_row ():
+    global customer_details, delete_item, total_entries, name_count
+    del customer_details[int(delete_item.get())]
+    total_entries = total_entries - 1
+    delete_item.delete(0,'end')
+    Label(main_window, text="                                 ").grid(column=0,row=name_count+7)
+    Label(main_window, text="                                 ").grid(column=1,row=name_count+7)
+    Label(main_window, text="                                 ").grid(column=2,row=name_count+7)
+    Label(main_window, text="                                 ").grid(column=3,row=name_count+7)
+    Label(main_window, text="                                 ").grid(column=4,row=name_count+7)
+    print_customer_details()
+
 
 
 
