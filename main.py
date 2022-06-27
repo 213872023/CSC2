@@ -4,7 +4,7 @@ from tkinter import ttk
 
 #quit
 def quit():
-    main_window()
+    main_window.destroy()
 
 #Labels
 def print_customer_details ():
